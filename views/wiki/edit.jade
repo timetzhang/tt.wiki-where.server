@@ -1,0 +1,12 @@
+extends ../layout
+block head
+  script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js")
+  script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js")
+  script(type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js")
+  script(type="text/javascript" charset="utf-8" src="/js/wiki/edit.js")
+
+block content
+  input(type="hidden" id="_id" value=_id)
+  input(type="text" id="name" value=name)
+  script(id="editor" type="text/plain" style="min-height:300px")!= details
+  button(id="submit" onclick="page.submit()") Submit

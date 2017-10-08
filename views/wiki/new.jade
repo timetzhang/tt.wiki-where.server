@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 block head
   script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js")
   script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js")
@@ -6,6 +6,6 @@ block head
   script(type="text/javascript" charset="utf-8" src="/js/index.js")
 
 block content
-  .center
-    h1 ZhangTT
-    input(type="text")
+  input(type="text" id="name" value=name)
+  script(id="editor" type="text/plain" style="min-height:300px")
+  button(id="submit" onclick="page.submit()") Submit

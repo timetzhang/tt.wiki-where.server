@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var ueditor = require('ueditor');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var wiki = require('./routes/wiki');
+var search = require('./routes/search');
 
 var app = express();
 
@@ -24,7 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/wiki', wiki);
+app.use('/s', search);
 app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function (req, res, next) {
     //客户端上传文件设置
     var ActionType = req.query.action;
